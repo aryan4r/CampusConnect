@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events — CampusConnect LPU</title>
+<meta name="description" content="Browse and register for upcoming events at Lovely Professional University.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><b>Campus</b>Connect<small>LPU</small></a>
+  <nav class="main" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="events.html" aria-current="page">Events</a>
+    <a href="about.html">About</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="pagehead">
+  <div class="wrap">
+    <h1>Campus events</h1>
+    <p>Every event on the December calendar. Pick a category to narrow the list, then register in one step.</p>
+  </div>
+</section>
+
+<section class="block" id="list" aria-label="Event directory">
+  <div class="wrap filterbox">
+    <input type="radio" name="cat" id="f-all" checked><label for="f-all">All</label>
+    <input type="radio" name="cat" id="f-tech"><label for="f-tech">Tech</label>
+    <input type="radio" name="cat" id="f-cultural"><label for="f-cultural">Cultural</label>
+    <input type="radio" name="cat" id="f-sports"><label for="f-sports">Sports</label>
+    <input type="radio" name="cat" id="f-workshops"><label for="f-workshops">Workshops</label>
+
+    <div class="grid">
+      <article class="card tech"><span class="tag">Featured • Tech Fest</span><h3>Innovate 2026</h3>
+        <p>The flagship tech fest with talks, demos and student showcases.</p>
+        <ul class="meta"><li>Dec 10, 2026</li><li>Shanti Devi Mittal Auditorium</li></ul>
+        <div class="foot"><span class="price">₹199</span><a class="btn" href="#register">Register</a></div></article>
+
+      <article class="card tech"><span class="tag">Tech</span><h3>CodeStorm 24hr Hackathon</h3>
+        <p>Build a working project in 24 hours with your team.</p>
+        <ul class="meta"><li>Dec 12, 2026</li><li>Block 34, Lab 402</li></ul>
+        <div class="foot"><span class="price">Free</span><a class="btn" href="#register">Register</a></div></article>
+
+      <article class="card cultural"><span class="tag">Cultural</span><h3>One India Cultural Night</h3>
+        <p>Music, dance and food from every region represented on campus.</p>
+        <ul class="meta"><li>Dec 15, 2026</li><li>Baldev Raj Mittal UniPolis</li></ul>
+        <div class="foot"><span class="price">Free</span><a class="btn" href="#register">Register</a></div></article>
+
+      <article class="card sports"><span class="tag">Sports</span><h3>Inter-Hostel Cricket Cup</h3>
+        <p>Hostel teams compete for the trophy. Bring your cheering squad.</p>
+        <ul class="meta"><li>Dec 18, 2026</li><li>LPU Sports Complex</li></ul>
+        <div class="foot"><span class="price">₹100</span><a class="btn" href="#register">Register</a></div></article>
+
+      <article class="card workshops"><span class="tag">Workshops</span><h3>Web Dev Bootcamp (HTML/JS)</h3>
+        <p>A hands-on day of building your first responsive web pages.</p>
+        <ul class="meta"><li>Dec 20, 2026</li><li>Block 38, Seminar Hall</li></ul>
+        <div class="foot"><span class="price">Free</span><a class="btn" href="#register">Register</a></div></article>
+
+      <article class="card tech"><span class="tag">Tech</span><h3>AI &amp; Robotics Expo</h3>
+        <p>Student robots, AI demos and industry stalls under one roof.</p>
+        <ul class="meta"><li>Dec 22, 2026</li><li>Uni-Mall Atrium</li></ul>
+        <div class="foot"><span class="price">₹50</span><a class="btn" href="#register">Register</a></div></article>
+
+      <article class="card cultural"><span class="tag">Cultural</span><h3>Acoustic Evening &amp; Open Mic</h3>
+        <p>An unplugged night. Perform a set or just listen.</p>
+        <ul class="meta"><li>Dec 24, 2026</li><li>DSA Open Stage</li></ul>
+        <div class="foot"><span class="price">Free</span><a class="btn" href="#register">Register</a></div></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="register" role="dialog" aria-labelledby="reg-title">
+  <div class="box">
+    <a class="close" href="#list" aria-label="Close registration form">&times;</a>
+    <h2 id="reg-title">Event registration</h2>
+    <form action="events.html#registered" method="get">
+      <label for="name">Full name
+        <input type="text" id="name" name="name" required minlength="3" autocomplete="name" placeholder="Your full name"></label>
+      <label for="regno">LPU registration number <small>(8 digits)</small>
+        <input type="text" id="regno" name="regno" required pattern="[0-9]{8}" inputmode="numeric" maxlength="8" title="Enter your 8-digit registration number, for example 1260xxxx" placeholder="1260xxxx"></label>
+      <label for="email">Email
+        <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label for="event">Event
+        <select id="event" name="event" required>
+          <option value="" selected disabled>Choose an event</option>
+          <option>Innovate 2026 (₹199)</option>
+          <option>CodeStorm 24hr Hackathon</option>
+          <option>One India Cultural Night</option>
+          <option>Inter-Hostel Cricket Cup (₹100)</option>
+          <option>Web Dev Bootcamp (HTML/JS)</option>
+          <option>AI &amp; Robotics Expo (₹50)</option>
+          <option>Acoustic Evening &amp; Open Mic</option>
+        </select></label>
+      <button class="btn" type="submit">Confirm registration</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="registered" role="dialog" aria-labelledby="done-title">
+  <div class="box">
+    <a class="close" href="events.html#list" aria-label="Close">&times;</a>
+    <h2 id="done-title">Registration received</h2>
+    <p style="margin:.6rem 0 1.4rem;color:var(--tx2)">Thanks! Your details have been submitted. Check the event date and venue on the list, and carry your LPU ID.</p>
+    <a class="btn" href="events.html#list">Back to events</a>
+  </div>
+</div>
+
+<footer class="site"><div class="wrap">
+  <p>CampusConnect</p>
+  <nav aria-label="Footer"><a href="index.html">Home</a><a href="events.html">Events</a><a href="about.html">About</a></nav>
+</div></footer>
+</body>
+</html>
